@@ -6,6 +6,10 @@ from app.api.routes import status
 from app.api.routes import version
 from app.api.routes import config
 from app.api.routes import test
+from app.api.routes import token
+from app.api.routes import verify
+from app.api.routes import db_test
+from app.api.routes import user
 
 api_router = APIRouter()
 
@@ -16,3 +20,6 @@ api_router.include_router(status.router)
 api_router.include_router(version.router)
 api_router.include_router(config.router)
 api_router.include_router(test.router)
+api_router.include_router(token.router)
+api_router.include_router(db_test.router)
+api_router.include_router(user.router)

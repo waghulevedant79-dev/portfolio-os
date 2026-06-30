@@ -10,6 +10,10 @@ class Settings(BaseSettings):
     DEBUG:bool
     ENVIRONMENT:str
     
+    DATABASE_URL: str
+    SECRET_KEY: str
+    ALGORITHM: str
+    
     class Config:
         env_file = ".env"
         
