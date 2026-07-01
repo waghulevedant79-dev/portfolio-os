@@ -14,6 +14,9 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str
     
+    OPENROUTER_API_KEY: str
+    LLM_MODEL: str
+    
     class Config:
         env_file = ".env"
         

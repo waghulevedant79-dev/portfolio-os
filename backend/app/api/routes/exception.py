@@ -3,8 +3,8 @@ from app.core.exceptions import AppException
 
 router = APIRouter()
 
-@router.get("/test")
-async def test():
+@router.get("/exception")
+async def exception():
     raise AppException(
         "Something went wrong",
         400
