@@ -1,21 +1,7 @@
-from openai import OpenAI
-from app.core.settings import settings
-
-client = OpenAI(
-    api_key=settings.OPENROUTER_API_KEY,
-    base_url="https://openrouter.ai/api/v1"
-)
+from app.ai.providers.provider_manager import ask_provider, stream_provider
 
 def ask_llm(prompt: str) -> str:
-    
-    response = client.chat.completions.create(
-        model=settings.LLM_MODEL,
-        messages=[
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ]
-    )
-    
-    return response.choices[0].message.content
+    return ask_provider(prompt)
+
+def stream_llm(prompt: str) -> str:
+    return stream_provider(prompt)

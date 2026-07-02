@@ -15,6 +15,9 @@ class Settings(BaseSettings):
     ALGORITHM: str
     
     OPENROUTER_API_KEY: str
+    
+    GEMINI_API_KEY: str
+    LLM_PROVIDER: str
     LLM_MODEL: str
     
     class Config:
